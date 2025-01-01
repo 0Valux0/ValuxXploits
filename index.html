@@ -1,1 +1,62 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ValuxXploits</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      pointer-events: none;
+      animation: snow 10s linear infinite;
+    }
+
+    @keyframes snow {
+      0% {
+        transform: translateY(-100px);
+      }
+      100% {
+        transform: translateY(calc(100vh + 100px));
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    // Function to create snowflakes
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.style.left = Math.random() * 100 + '%'; // Random horizontal position
+      snowflake.style.animationDuration = Math.random() * 3 + 7 + 's'; // Random falling speed
+      snowflake.style.animationDelay = Math.random() * 5 + 's'; // Random delay
+      document.body.appendChild(snowflake);
+
+      // Remove snowflake once it's out of view
+      snowflake.addEventListener('animationiteration', () => {
+        snowflake.remove();
+      });
+    }
+
+    // Generate snowflakes at intervals
+    setInterval(createSnowflake, 50);
+  </script>
+
+</body>
+</html>
