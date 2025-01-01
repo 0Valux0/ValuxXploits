@@ -14,6 +14,25 @@
       position: relative;
     }
 
+    .download-btn {
+            background-color: hotpink; /* Hotpink background */
+            color: white; /* White text */
+            font-size: 18px; /* Text size */
+            padding: 15px 30px; /* Button padding */
+            border: none; /* Remove border */
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* Remove link decoration */
+            display: inline-block;
+            transition: background-color 0.3s ease; /* Smooth color change on hover */
+        }
+
+        /* Hover effect */
+        .download-btn:hover {
+            background-color: #ff66b2; /* Lighter pink on hover */
+        }
+
     .snowflake {
       position: absolute;
       top: -10px;
@@ -37,6 +56,11 @@
   </style>
 </head>
 <body>
+
+      <!-- Download Button with link -->
+    <a href="path/to/ValuxXploits.zip" class="download-btn" download>
+        Download ValuxXploits
+    </a>
    
   <script>
     // Function to create snowflakes
